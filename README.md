@@ -13,4 +13,4 @@
 
 
 
-![image](https://github.com/yeqiu/tubatu-viewpager/raw/master/screenshots/hualang.gif
+![image](https://github.com/yeqiu/tubatu-viewpager/raw/master/screenshots/hualang.gif）
