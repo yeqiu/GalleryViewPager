@@ -3,10 +3,8 @@ package com.hhl.tubatu;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Created by yeiqu
@@ -36,9 +34,9 @@ public class ClipViewPager extends ViewPager {
             float upX = ev.getX();
             float upY = ev.getY();
             //如果 up的位置和down 的位置 距离 > 设置的距离,则事件继续传递,不执行下面的点击切换事件
-            /*if(Math.abs(upX - downX) > DISTANCE || Math.abs(upY - downY) > DISTANCE){
+            if(Math.abs(upX - downX) > DISTANCE || Math.abs(upY - downY) > DISTANCE){
                 return super.dispatchTouchEvent(ev);
-            }*/
+            }
 
             View view = viewOfClickOnScreen(ev);
             if (view != null) {
@@ -57,8 +55,6 @@ public class ClipViewPager extends ViewPager {
      */
     private View viewOfClickOnScreen(MotionEvent ev) {
         int childCount = getChildCount();
-        Log.i("test", "childCount "+childCount);
-        Toast.makeText(getContext(),"childCount "+childCount,Toast.LENGTH_SHORT).show();
         int currentIndex = getCurrentItem();
         int[] location = new int[2];
         for (int i = 0; i < childCount; i++) {

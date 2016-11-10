@@ -41,18 +41,16 @@ public class MainActivity extends AppCompatActivity {
         initData();
 
 
-        mViewPager.setCurrentItem(3);
+        mViewPager.setCurrentItem(500);
     }
 
     private void initData() {
         list = new ArrayList<>();
-        list.add(R.drawable.style_xiandai);
-        list.add(R.drawable.style_jianyue);
-        list.add(R.drawable.style_oushi);
-        list.add(R.drawable.style_zhongshi);
-        list.add(R.drawable.style_meishi);
-
-
+        list.add(R.drawable.a01);
+        list.add(R.drawable.a02);
+        list.add(R.drawable.a03);
+        list.add(R.drawable.a04);
+        list.add(R.drawable.a05);
 
         //设置OffscreenPageLimit
         mViewPager.setOffscreenPageLimit(Math.min(list.size(), 5));
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return mList.size()*100;
+            return mList.size()*1000;
         }
     }
 
