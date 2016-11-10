@@ -13,7 +13,4 @@
 
 
 
-![enter description here][1]
-
-
-[1]: ./images/%E7%94%BB%E5%BB%8A.gif "画廊.gif"
+![image](https://github.com/yeqiu/tubatu-viewpager/raw/master/screenshots/hualang.gif
