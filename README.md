@@ -1,4 +1,4 @@
-# tubatu-viewpager
+# GalleryViewPager
 通过ViewPager实现，可以无限滑动
 
 
