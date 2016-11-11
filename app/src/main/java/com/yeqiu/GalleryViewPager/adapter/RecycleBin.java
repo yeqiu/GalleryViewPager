@@ -1,4 +1,4 @@
-package com.hhl.tubatu.adapter;
+package com.yeqiu.GalleryViewPager.adapter;
 
 import android.os.Build;
 import android.util.SparseArray;

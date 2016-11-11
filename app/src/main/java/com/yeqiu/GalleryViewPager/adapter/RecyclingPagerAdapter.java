@@ -1,4 +1,4 @@
-package com.hhl.tubatu.adapter;
+package com.yeqiu.GalleryViewPager.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;

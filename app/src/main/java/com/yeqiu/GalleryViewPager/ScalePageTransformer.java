@@ -1,16 +1,21 @@
-package com.hhl.tubatu;
+package com.yeqiu.GalleryViewPager;
 
 import android.os.Build;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * Created by yeqiu.
+ * project：tubatu-viewpager
+ * describe：缩放的动画
+ * author：yeqiu
+ * date：2016/11/11 15:08
  */
 public class ScalePageTransformer implements ViewPager.PageTransformer {
 
+    //最大缩放
     public static final float MAX_SCALE = 1.2f;
-    public static final float MIN_SCALE = 0.6f;
+    //最小缩放
+    public static final float MIN_SCALE = 1.0f;
 
     @Override
     public void transformPage(View page, float position) {
