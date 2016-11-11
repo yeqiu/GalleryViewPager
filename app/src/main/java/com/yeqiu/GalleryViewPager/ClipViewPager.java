@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * project：tubatu-viewpager
+ * project：GalleryViewPager
  * describe：自定义的viewpager
  * author：yeqiu
  * date：2016/11/11 15:08
@@ -20,6 +20,8 @@ public class ClipViewPager extends ViewPager {
     private float downY;
     private int position;
 
+
+
     public ClipViewPager(Context context) {
         super(context);
     }
@@ -28,8 +30,12 @@ public class ClipViewPager extends ViewPager {
         super(context, attrs);
     }
 
+
+
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+
         ///获取手指落下的x y坐标值
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             downX = ev.getX();
@@ -53,12 +59,14 @@ public class ClipViewPager extends ViewPager {
                 int index = (Integer) view.getTag();
                 //如果当前的view不是被点击的view就设置当前item
                 if (getCurrentItem() != index) {
+
                     setCurrentItem(index);
                 }
             }
         }
         return super.dispatchTouchEvent(ev);
     }
+
     /**
      * 此方法能返回用户点击图片的view
      * 点击空白处返回null
@@ -85,7 +93,7 @@ public class ClipViewPager extends ViewPager {
             int maxX = location[0] + v.getWidth();
             int maxY = location[1] + v.getHeight();
             //position是在activity中传进来的。如果小于当前view的所有。说明点击的是左边
-           if (position < currentIndex) {
+            if (position < currentIndex) {
                 //获取左边图片的坐标,从屏幕算起来的
                 maxX -= v.getWidth() * (1 - ScalePageTransformer.MIN_SCALE) * 0.5 + v.getWidth()
                         * (Math.abs(1 - ScalePageTransformer.MAX_SCALE)) * 0.5;
@@ -95,7 +103,7 @@ public class ClipViewPager extends ViewPager {
                 //感觉其实不用计算这个。这个代表选中的是当前已经展示的view
                 //minX += v.getWidth() * (Math.abs(1 - ScalePageTransformer.MAX_SCALE));
             } else if (position > currentIndex) {
-               //获取右边图片的坐标,从屏幕算起来的
+                //获取右边图片的坐标,从屏幕算起来的
                 maxX -= v.getWidth() * (Math.abs(1 - ScalePageTransformer.MAX_SCALE)) * 0.5;
                 minX -= v.getWidth() * (Math.abs(1 - ScalePageTransformer.MAX_SCALE)) * 0.5;
             }
@@ -109,6 +117,7 @@ public class ClipViewPager extends ViewPager {
         }
         return null;
     }
+
 }
 
 

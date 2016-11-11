@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * project：tubatu-viewpager
+ * project：GalleryViewPager
  * describe：viewpager实现画廊，中间放大效果。未封装
  * author：yeqiu
  * date：2016/11/11 15:08
@@ -25,20 +25,21 @@ public class MainActivity extends AppCompatActivity {
     private TubatuAdapter mPagerAdapter;
     private List<Integer> list;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mViewPager = (ClipViewPager) findViewById(R.id.viewpager);
-        //设置滑动的速度
+        //设置滑动的速度 设置了滑动速度会对快速点击产生影响
         SpeedScroller scroller = new SpeedScroller(this);
-        scroller.setScrollDuration(1000);
-        scroller.initViewPagerScroll(mViewPager);
+        //scroller.setScrollDuration(500);
+        //设置滑动速度会对重复点击有影响
+       // scroller.initViewPagerScroll(mViewPager);
 
         //此方法用于设置viepager滑动的动画。这里可以缩放
         mViewPager.setPageTransformer(true, new ScalePageTransformer());
-
         //设置间距在dimen声明的间距，可以适配
         mViewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.page_magin));
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.page_container).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+
                 return mViewPager.dispatchTouchEvent(event);
             }
         });
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mPagerAdapter.addAll(list);
     }
 
-    //适配器使用的是别人封装好的适配器
+    //适配器使用的是开源的
     public static class TubatuAdapter extends RecyclingPagerAdapter {
 
         private final List<Integer> mList;
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 imageView = (ImageView) convertView;
             }
-            //注意这个position不能取余，以为在自定义viewpager要使用这个postion
+            //注意这个position不能取余，因为在自定义viewpager要使用这个postion
             imageView.setTag(position);
             imageView.setImageResource(mList.get(position % mList.size()));
             return imageView;

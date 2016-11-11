@@ -8,7 +8,7 @@ import android.widget.Scroller;
 import java.lang.reflect.Field;
 
 /**
- * project：tubatu-viewpager
+ * project：GalleryViewPager
  * describe：实现veipager的滑动速度
  * author：yeqiu
  * date：2016/11/11 14:52

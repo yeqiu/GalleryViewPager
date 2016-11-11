@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * project：tubatu-viewpager
+ * project：GalleryViewPager
  * describe：缩放的动画
  * author：yeqiu
  * date：2016/11/11 15:08
